@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './register.css'
 import RegisterForm from './RegisterForm';
 
@@ -20,6 +21,8 @@ const Register = () => {
     confirmation: ""
   });
 
+  const navigate = useNavigate();
+
 
   const handleOnchangeEvent = (e) => {
     let name = e.target.name, value = e.target.value;
@@ -34,14 +37,15 @@ const Register = () => {
 
   const handleSubmitEvent = (e) => {
     e.preventDefault();
-    let v1=false, v2=false,v3=false,v4=false,v5=false;
-    v1=validateEmail();
-    v2=validateMobileNumber();
-    v3=validateName();
-    v4=validateUserName();
-    v5=validateConfirmation();
-    if(v1 && v2 && v3 && v4 && v5) {
+    let v1 = false, v2 = false, v3 = false, v4 = false, v5 = false;
+    v1 = validateEmail();
+    v2 = validateMobileNumber();
+    v3 = validateName();
+    v4 = validateUserName();
+    v5 = validateConfirmation();
+    if (v1 && v2 && v3 && v4 && v5) {
       localStorage.setItem("user", userDetails);
+      navigate("/category")
     }
   }
 

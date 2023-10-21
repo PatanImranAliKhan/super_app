@@ -80,7 +80,7 @@ const RegisterForm = ({ userDetails, userDetailsError, handleSubmitEvent, handle
                                 }
                             </span>
                         </div>
-                        <button type='submit'>SIGN UP</button>
+                        <button className='submitbut' type='submit'>SIGN UP</button>
                         <div className='policy'>
                             <p>By clicking on Sign up. you agree to Superapp <span className='highlight'>Terms and Conditions of Use</span></p>
                             <p>To learn more about how Superapp collects, uses, shares and protects your personal
